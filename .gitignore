@@ -1,1 +1,9 @@
 build/*
+win32/Debug
+win32/Release
+win32/*.log
+win32/*.opensdf
+win32/*.suo
+win32/*.user
+win32/*.sdf
+win32/ipch

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TinyUI", "TinyUI.vcxproj", "{3B7C5306-990A-46A8-AC46-208A76BB29C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F3FC655-16E8-4EB7-AEAE-4AD07626EC15}"
+	ProjectSection(SolutionItems) = preProject
+		..\README = ..\README
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example1", "example1.vcxproj", "{3F3A50B4-F306-4E94-BBFC-84AE9B83E254}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B7C5306-990A-46A8-AC46-208A76BB29C8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3B7C5306-990A-46A8-AC46-208A76BB29C8}.Debug|Win32.Build.0 = Debug|Win32
+		{3B7C5306-990A-46A8-AC46-208A76BB29C8}.Release|Win32.ActiveCfg = Release|Win32
+		{3B7C5306-990A-46A8-AC46-208A76BB29C8}.Release|Win32.Build.0 = Release|Win32
+		{3F3A50B4-F306-4E94-BBFC-84AE9B83E254}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F3A50B4-F306-4E94-BBFC-84AE9B83E254}.Debug|Win32.Build.0 = Debug|Win32
+		{3F3A50B4-F306-4E94-BBFC-84AE9B83E254}.Release|Win32.ActiveCfg = Release|Win32
+		{3F3A50B4-F306-4E94-BBFC-84AE9B83E254}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

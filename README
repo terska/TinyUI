@@ -1,0 +1,72 @@
+========================================================================
+    TinyUI -- Tiny User Interface Library
+========================================================================
+
+This is a simple User Interface library when you need to quickly create
+a quick and dirty GUI for a program you're developing.
+
+Sometimes full GUI libraries like wxwidgets or qt are too large to include
+in a small project and they largely mandate the program structure you need
+to use like the main loop of the application.
+
+Enter TinyUI, a user interface that is only a library. You can just plug it
+into a existing application to create a simple dialogs.
+
+Supported widgets:
+ - pushbuttons
+ - statics (labels)
+ - text entry
+
+Advantages:
+ - very small and easy to understand
+ - only depends on stl (vector & string)
+ - easy to implement a new platform
+ - liberal zlib license
+
+Caveats:
+ - not many widgets
+ - may not have the functionality that you need
+ - no form designer
+ - no automatic layout
+
+ Simple usage:
+
+ int WinMain(HINSTANCE hInstance,...) {
+ 	UI::Win32Window window(hInstance,640,480,"TestWindow");
+
+	UI::Form form(&window);
+	UI::Button button1("Button1",10,10,100,30);
+	UI::Static label1("Label1",10,50,100,20);
+	UI::TextField text1(110,50,100,20);
+	form.Add(&button1);
+	form.Add(&label1);
+	form.Add(&text1);
+	
+	return window.EventLoop();
+}
+
+Events are either delegated to custom handler or widgets are subclassed. The
+following examples create a button that will quit the application event loop.
+
+Delegates:
+
+	class QuitButtonDelegate : public UI::Delegate {
+		UI::Win32Window *mainwindow_;
+	public:
+		QuitButtonDelegate(UI::Win32Window *w) : mainwindow_(w) { }
+		void Invoke(UI::EventType e) {
+			if (e == UI::Clicked) mainwindow_->ExitEventLoop();
+		}
+	};
+
+	QuitButtonDelegate d(&window);
+	quitbutton.Delegate(&d);
+
+Subclasses:
+
+	class QuitButton : public Button {
+		UI::Win32Window *mainwindow_;
+	public:
+		QuitButton(UI::Win32Window *w) : mainwindow_(w) { }
+		void OnClick() { mainwindow_->ExitEventLoop(); }
+	};
